@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config({ path: '.env' });
 
-const conectarDB = async (): Promise<void> => {
+const conDB = async (): Promise<void> => {
     try {
       const mongoUri = process.env.MONGO_URL;
       if (!mongoUri) {
@@ -11,11 +11,11 @@ const conectarDB = async (): Promise<void> => {
       }
   
       await mongoose.connect(mongoUri);
-      console.log("BD Conectada...");
+      console.log("DB connection stablished...");
     } catch (error) {
       console.error("Error connecting to the database: ", error);
       process.exit(1);
     }
   };
   
-  export default conectarDB;
+  export default conDB;

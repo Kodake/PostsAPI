@@ -1,10 +1,11 @@
 import * as express from "express";
 import * as cors from "cors";
-import conectarDB from './config/db.config';
+import conDB from './config/db.config';
 
 const app = express();
+app.set('index', 'index');
 
-conectarDB();
+conDB();
 
 app.use(cors());
 app.use(express.json());
@@ -16,5 +17,5 @@ app.use('/api/posts', postRouter);
 const PORT = parseInt(process.env.PORT as string, 10) || 5000;
 
 app.listen(PORT, () => {
-  console.log(`El servidor está corriendo correctamente en el puerto ${PORT}...`);
+  console.log(`Server running at port ${PORT}...`);
 });
