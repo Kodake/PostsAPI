@@ -5,12 +5,12 @@ dotenv.config({ path: '.env' });
 
 const conDB = async (): Promise<void> => {
     try {
-      const mongoUri = process.env.MONGO_URL;
-      if (!mongoUri) {
+      const mongoUrl = process.env.MONGO_URL;
+      if (!mongoUrl) {
         throw new Error("MongoDB connection string is not defined in .env file");
       }
   
-      await mongoose.connect(mongoUri);
+      await mongoose.connect(mongoUrl);
       console.log("DB connection stablished...");
     } catch (error) {
       console.error("Error connecting to the database: ", error);
