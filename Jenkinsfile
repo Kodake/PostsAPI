@@ -5,7 +5,7 @@ pipeline {
         stage('docker build') {
             steps {
                 script {
-                    bat "docker build -t ./Dockerfile ."
+                    bat "docker build -t postsapi/Dockerfile ."
                 }
             }
         }
