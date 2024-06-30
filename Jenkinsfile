@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('docker build') {
+        stage('docker compose build') {
             steps {
                 script {
-                    bat "docker build -t posts-api:latest ."
+                    bat "docker-compose build --no-cache"
                 }
             }
         }
-        stage('docker run') {
+        stage('docker compose up') {
             steps {
                 script {
-                    bat "docker run -p 5000:5000 posts-api:latest"
+                    bat "docker-compose up"
                 }
             }
         }
