@@ -1,6 +1,6 @@
 services:
   backend:
-    build: ./PostsAPI
+    build: .
     container_name: posts-backend
     ports:
       - "5000:5000"
