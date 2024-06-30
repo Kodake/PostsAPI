@@ -5,7 +5,7 @@ pipeline {
         stage('docker build') {
             steps {
                 script {
-                    bat "docker build -f PostAPI/Dockerfile -t kodake/mern-backend:latest"
+                    bat "docker build -f PostAPI/Dockerfile"
                 }
             }
         }
