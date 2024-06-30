@@ -9,12 +9,12 @@ pipeline {
                 }
             }
         }
-        // stage('docker push') {
-        //     steps {
-        //         script {
-        //             bat "docker push kodake/mern-backend:latest"
-        //         }
-        //     }
-        // }
+        stage('docker run') {
+            steps {
+                script {
+                    bat "docker run -p 5000:5000 posts-api:latest"
+                }
+            }
+        }
     }
 }
