@@ -5,7 +5,7 @@ pipeline {
         stage('docker build') {
             steps {
                 scripts {
-                    sh "docker build -f PostAPI/Dockerfile -t kodake/posts-api:latest"
+                    sh "docker build -f PostAPI/Dockerfile -t kodake/mern-backend:latest"
                 }
             }
         }
